@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6e1ed43b4e8d4c32a1a6add576ddab4a" Name="Diagram1">
+        <EntityTypeShape EntityType="AutoDBModel.CAR" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoDBModel.COMPREHENSIVE_COVER" Width="1.5" PointX="7.875" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoDBModel.INFO_COMPREHENSIVE_COVER" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoDBModel.INSURANCE" Width="1.5" PointX="7.875" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoDBModel.INSURANCE_INFO" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoDBModel.OWNER" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="AutoDBModel.FK__CARS__OWNER_ID__1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="AutoDBModel.FK__INFO_COMP__CAR_I__1ED998B2" ManuallyRouted="false" />
+        <AssociationConnector Association="AutoDBModel.FK__INSURANCE__CAR_I__20C1E124" ManuallyRouted="false" />
+        <AssociationConnector Association="AutoDBModel.FK__INFO_COMP__COMPR__1FCDBCEB" ManuallyRouted="false" />
+        <AssociationConnector Association="AutoDBModel.FK__INSURANCE__INSUR__21B6055D" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
