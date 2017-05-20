@@ -3,6 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Button Content="Гражданска отговорност" HorizontalAlignment="Left" Margin="75,56,0,0" VerticalAlignment="Top" Width="343"/>
+        <Button Content="Автокаско" HorizontalAlignment="Left" Margin="75,110,0,0" VerticalAlignment="Top" Width="343" Height="40"/>
+        <Button Content="Проверка в системата" HorizontalAlignment="Left" Margin="75,187,0,0" VerticalAlignment="Top" Width="332"/>
+        <Label Content="Разпечатване на " HorizontalAlignment="Left" Margin="217,10,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>
