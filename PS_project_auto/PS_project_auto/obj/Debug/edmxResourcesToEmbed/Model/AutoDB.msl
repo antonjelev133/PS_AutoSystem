@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AutoDBModelStoreContainer" CdmEntityContainer="AutoDBEntities">
+    <EntitySetMapping Name="CARS">
+      <EntityTypeMapping TypeName="AutoDBModel.CAR">
+        <MappingFragment StoreEntitySet="CARS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MARK" ColumnName="MARK" />
+          <ScalarProperty Name="MODEL" ColumnName="MODEL" />
+          <ScalarProperty Name="REGISTRATION" ColumnName="REGISTRATION" />
+          <ScalarProperty Name="DATA" ColumnName="DATA" />
+          <ScalarProperty Name="ENGINE_LITERS" ColumnName="ENGINE LITERS" />
+          <ScalarProperty Name="OWNER_ID" ColumnName="OWNER_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMPREHENSIVE_COVER">
+      <EntityTypeMapping TypeName="AutoDBModel.COMPREHENSIVE_COVER">
+        <MappingFragment StoreEntitySet="COMPREHENSIVE_COVER">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PRICE_CAR" ColumnName="PRICE_CAR" />
+          <ScalarProperty Name="DATE_EXPIRE" ColumnName="DATE_EXPIRE" />
+          <ScalarProperty Name="FINAL_PRICE" ColumnName="FINAL_PRICE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INFO_COMPREHENSIVE_COVER">
+      <EntityTypeMapping TypeName="AutoDBModel.INFO_COMPREHENSIVE_COVER">
+        <MappingFragment StoreEntitySet="INFO_COMPREHENSIVE_COVER">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CAR_ID" ColumnName="CAR_ID" />
+          <ScalarProperty Name="COMPREHENSIVE_COVER_ID" ColumnName="COMPREHENSIVE_COVER_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INSURANCEs">
+      <EntityTypeMapping TypeName="AutoDBModel.INSURANCE">
+        <MappingFragment StoreEntitySet="INSURANCE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ENGINE_LITERS" ColumnName="ENGINE LITERS" />
+          <ScalarProperty Name="YEAROFCAR" ColumnName="YEAROFCAR" />
+          <ScalarProperty Name="OWNERAGE" ColumnName="OWNERAGE" />
+          <ScalarProperty Name="PERIOD" ColumnName="PERIOD" />
+          <ScalarProperty Name="DATE_EXPIRE" ColumnName="DATE EXPIRE" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INSURANCE_INFO">
+      <EntityTypeMapping TypeName="AutoDBModel.INSURANCE_INFO">
+        <MappingFragment StoreEntitySet="INSURANCE_INFO">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CAR_ID" ColumnName="CAR_ID" />
+          <ScalarProperty Name="INSURANCE_ID" ColumnName="INSURANCE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OWNERS">
+      <EntityTypeMapping TypeName="AutoDBModel.OWNER">
+        <MappingFragment StoreEntitySet="OWNERS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="EGN" ColumnName="EGN" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tables">
+      <EntityTypeMapping TypeName="AutoDBModel.Table">
+        <MappingFragment StoreEntitySet="Table">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USERS">
+      <EntityTypeMapping TypeName="AutoDBModel.USER">
+        <MappingFragment StoreEntitySet="USERS">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="USER1" ColumnName="USER" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="OWNERS_ID" ColumnName="OWNERS_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

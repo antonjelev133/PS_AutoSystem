@@ -18,6 +18,7 @@ namespace PS_project_auto.Model
         public OWNER()
         {
             this.CARS = new HashSet<CAR>();
+            this.USERS = new HashSet<USER>();
         }
     
         public int ID { get; set; }
@@ -27,5 +28,7 @@ namespace PS_project_auto.Model
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CAR> CARS { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<USER> USERS { get; set; }
     }
 }

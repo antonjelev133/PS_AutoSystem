@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c0e4f16e14d849b385e7e8741247df56" Name="Diagram1" ZoomLevel="66">
+        <EntityTypeShape EntityType="AutoDBModel.CAR" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoDBModel.COMPREHENSIVE_COVER" Width="1.5" PointX="6.625" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoDBModel.INFO_COMPREHENSIVE_COVER" Width="1.5" PointX="6.875" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoDBModel.INSURANCE" Width="1.5" PointX="4.875" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoDBModel.INSURANCE_INFO" Width="1.5" PointX="4.625" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoDBModel.OWNER" Width="1.5" PointX="0.875" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoDBModel.Table" Width="1.5" PointX="14.125" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoDBModel.USER" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <AssociationConnector Association="AutoDBModel.FK__CARS__OWNER_ID__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="AutoDBModel.FK__INFO_COMP__CAR_I__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="AutoDBModel.FK__INSURANCE__CAR_I__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="AutoDBModel.FK__INFO_COMP__COMPR__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="AutoDBModel.FK__INSURANCE__INSUR__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="AutoDBModel.FK__USERS__OWNERS_ID__5BE2A6F2" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

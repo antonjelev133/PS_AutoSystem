@@ -1,0 +1,8 @@
+﻿<NavigationWindow x:Class="PS_project_auto.View.NavigaterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ViewModel="clr-namespace:PS_project_auto.ModelView"
+        Title="NavigaterWindow" Height="558.917" Width="651.128" Source="NavigationPage.xaml">
+ 
+   
+</NavigationWindow>

@@ -1,0 +1,21 @@
+﻿<Page x:Class="PS_project_auto.View.NavigationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="493.985" d:DesignWidth="793.985"
+	Title="NavigationPage">
+
+    <Grid RenderTransformOrigin="0.5,0.5" Margin="0,0,3,-2" Height="530" VerticalAlignment="Top">
+        <Button Content="Гражданска отговорност" HorizontalAlignment="Left" Margin="83,162,0,0" VerticalAlignment="Top" Width="171" Height="45" FontFamily="Segoe Marker" Background="#FFCB3122" Foreground="White" FontSize="14" Command="{Binding InsuranceButtonCommand}"/>
+        <Button Content="Автокаско" HorizontalAlignment="Left" Margin="83,96,0,0" VerticalAlignment="Top" Width="171" Height="45" FontFamily="Segoe Marker" Background="#FFCB3122" Foreground="White" FontSize="14" Command="{Binding ComprehensiveCoverButtonCommand}"/>
+        <Button Content="Проверка в системата" HorizontalAlignment="Left" Margin="336,162,0,0" VerticalAlignment="Top" Width="171" Height="45" FontFamily="Segoe Marker" Background="#FFCB3122" Foreground="White" FontSize="14" Command="{Binding CheckButtonCommand}"/>
+        <Button Content="Добавяне на автомобил" HorizontalAlignment="Left" Margin="336,96,0,0" VerticalAlignment="Top" Width="171" Height="45" FontFamily="Segoe Marker" Background="#FFCB3122" Foreground="White" FontSize="14" Command="{Binding AddCarButtonCommand}"/>
+        <Label Content="Добре дошли" HorizontalAlignment="Left" Margin="153,10,0,0" VerticalAlignment="Top" Foreground="#FFF50F0F" FontFamily="Rage Italic" FontSize="48"/>
+        <Label Content="AG INSURANCE GROUP  " HorizontalAlignment="Left" Margin="106,352,0,0" VerticalAlignment="Top" Width="401" FontFamily="Segoe Print" Background="White" Foreground="#FFFF2611" Height="91" FontSize="48"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="f1.jpg" Stretch="Uniform"/>
+        </Grid.Background>
+    </Grid>
+</Page>

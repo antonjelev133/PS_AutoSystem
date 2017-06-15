@@ -21,9 +21,9 @@ namespace PS_project_auto.Model
         }
     
         public int ID { get; set; }
-        public Nullable<decimal> PRICE_CAR { get; set; }
-        public Nullable<System.DateTime> DATE_EXPIRE { get; set; }
-        public Nullable<decimal> FINAL_PRICE { get; set; }
+        public Nullable<double> PRICE_CAR { get; set; }
+        public string DATE_EXPIRE { get; set; }
+        public Nullable<double> FINAL_PRICE { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<INFO_COMPREHENSIVE_COVER> INFO_COMPREHENSIVE_COVER { get; set; }

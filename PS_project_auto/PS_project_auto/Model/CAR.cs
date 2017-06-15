@@ -25,7 +25,7 @@ namespace PS_project_auto.Model
         public string MARK { get; set; }
         public string MODEL { get; set; }
         public string REGISTRATION { get; set; }
-        public Nullable<System.DateTime> DATA { get; set; }
+        public string DATA { get; set; }
         public Nullable<int> ENGINE_LITERS { get; set; }
         public Nullable<int> OWNER_ID { get; set; }
     

@@ -1,0 +1,20 @@
+﻿<Window x:Class="PS_project_auto.View.Registration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:ViewModel="clr-namespace:PS_project_auto.ModelView"
+        Title="Registration" Height="300" Width="394.737">
+    <Grid Margin="0,0,84,0">
+        <Button Content="Обратно" HorizontalAlignment="Left" Margin="201,198,0,0" VerticalAlignment="Top" Width="75" Command="{Binding BackButtonCommand}"/>
+        <Label Content="Потребител:" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Парола:" HorizontalAlignment="Left" Margin="20,36,0,0" VerticalAlignment="Top"/>
+        <Label Content="Имена:" HorizontalAlignment="Left" Margin="20,67,0,0" VerticalAlignment="Top"/>
+        <Label Content="ЕГН:" HorizontalAlignment="Left" Margin="20,93,0,0" VerticalAlignment="Top"/>
+        <Label Content="Адрес:" HorizontalAlignment="Left" Margin="20,119,0,0" VerticalAlignment="Top"/>
+        <TextBox Text="{Binding  User}" HorizontalAlignment="Left" Height="23" Margin="145,13,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox Text="{Binding  Password}" HorizontalAlignment="Left" Height="23" Margin="145,41,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox Text="{Binding  Name1}" HorizontalAlignment="Left" Height="23" Margin="145,71,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox Text="{Binding  Egn}" HorizontalAlignment="Left" Height="23" Margin="145,99,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox Text="{Binding  Adress}" HorizontalAlignment="Left" Height="23" Margin="145,127,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <Button Content="Регистрирай" HorizontalAlignment="Left" Margin="100,198,0,0" VerticalAlignment="Top" Width="75" Command="{Binding RegistrationButtonCommand}"/>
+    </Grid>
+</Window>

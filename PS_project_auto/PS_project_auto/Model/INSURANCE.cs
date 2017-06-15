@@ -25,8 +25,8 @@ namespace PS_project_auto.Model
         public Nullable<int> YEAROFCAR { get; set; }
         public Nullable<int> OWNERAGE { get; set; }
         public Nullable<int> PERIOD { get; set; }
-        public Nullable<System.DateTime> DATE_EXPIRE { get; set; }
-        public Nullable<decimal> PRICE { get; set; }
+        public string DATE_EXPIRE { get; set; }
+        public Nullable<double> PRICE { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<INSURANCE_INFO> INSURANCE_INFO { get; set; }

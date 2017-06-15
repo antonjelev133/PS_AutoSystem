@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AutoDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CAR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="MARK" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="MODEL" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="REGISTRATION" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="DATA" Type="DateTime" Precision="0" />
+    <Property Name="ENGINE_LITERS" Type="Int32" />
+    <Property Name="OWNER_ID" Type="Int32" />
+    <NavigationProperty Name="OWNER" Relationship="Self.FK__CARS__OWNER_ID__1DE57479" FromRole="CARS" ToRole="OWNERS" />
+    <NavigationProperty Name="INFO_COMPREHENSIVE_COVER" Relationship="Self.FK__INFO_COMP__CAR_I__1ED998B2" FromRole="CARS" ToRole="INFO_COMPREHENSIVE_COVER" />
+    <NavigationProperty Name="INSURANCE_INFO" Relationship="Self.FK__INSURANCE__CAR_I__20C1E124" FromRole="CARS" ToRole="INSURANCE_INFO" />
+  </EntityType>
+  <EntityType Name="COMPREHENSIVE_COVER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="PRICE_CAR" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DATE_EXPIRE" Type="DateTime" Precision="0" />
+    <Property Name="FINAL_PRICE" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="INFO_COMPREHENSIVE_COVER" Relationship="Self.FK__INFO_COMP__COMPR__1FCDBCEB" FromRole="COMPREHENSIVE_COVER" ToRole="INFO_COMPREHENSIVE_COVER" />
+  </EntityType>
+  <EntityType Name="INFO_COMPREHENSIVE_COVER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="CAR_ID" Type="Int32" />
+    <Property Name="COMPREHENSIVE_COVER_ID" Type="Int32" />
+    <NavigationProperty Name="CAR" Relationship="Self.FK__INFO_COMP__CAR_I__1ED998B2" FromRole="INFO_COMPREHENSIVE_COVER" ToRole="CARS" />
+    <NavigationProperty Name="COMPREHENSIVE_COVER" Relationship="Self.FK__INFO_COMP__COMPR__1FCDBCEB" FromRole="INFO_COMPREHENSIVE_COVER" ToRole="COMPREHENSIVE_COVER" />
+  </EntityType>
+  <EntityType Name="INSURANCE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="ENGINE_LITERS" Type="Int32" />
+    <Property Name="YEAROFCAR" Type="Int32" />
+    <Property Name="OWNERAGE" Type="Int32" />
+    <Property Name="PERIOD" Type="Int32" />
+    <Property Name="DATE_EXPIRE" Type="DateTime" Precision="0" />
+    <Property Name="PRICE" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="INSURANCE_INFO" Relationship="Self.FK__INSURANCE__INSUR__21B6055D" FromRole="INSURANCE" ToRole="INSURANCE_INFO" />
+  </EntityType>
+  <EntityType Name="INSURANCE_INFO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="CAR_ID" Type="Int32" />
+    <Property Name="INSURANCE_ID" Type="Int32" />
+    <NavigationProperty Name="CAR" Relationship="Self.FK__INSURANCE__CAR_I__20C1E124" FromRole="INSURANCE_INFO" ToRole="CARS" />
+    <NavigationProperty Name="INSURANCE" Relationship="Self.FK__INSURANCE__INSUR__21B6055D" FromRole="INSURANCE_INFO" ToRole="INSURANCE" />
+  </EntityType>
+  <EntityType Name="OWNER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="NAME" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="EGN" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ADDRESS" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="CARS" Relationship="Self.FK__CARS__OWNER_ID__1DE57479" FromRole="OWNERS" ToRole="CARS" />
+    <NavigationProperty Name="USERS" Relationship="Self.FK__USERS__OWNERS_ID__36B12243" FromRole="OWNERS" ToRole="USERS" />
+  </EntityType>
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="USER1" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="PASSWORD" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="OWNERS_ID" Type="Int32" />
+    <NavigationProperty Name="OWNER" Relationship="Self.FK__USERS__OWNERS_ID__36B12243" FromRole="USERS" ToRole="OWNERS" />
+  </EntityType>
+  <Association Name="FK__CARS__OWNER_ID__1DE57479">
+    <End Role="OWNERS" Type="Self.OWNER" Multiplicity="0..1" />
+    <End Role="CARS" Type="Self.CAR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OWNERS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CARS">
+        <PropertyRef Name="OWNER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__INFO_COMP__CAR_I__1ED998B2">
+    <End Role="CARS" Type="Self.CAR" Multiplicity="0..1" />
+    <End Role="INFO_COMPREHENSIVE_COVER" Type="Self.INFO_COMPREHENSIVE_COVER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CARS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="INFO_COMPREHENSIVE_COVER">
+        <PropertyRef Name="CAR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__INSURANCE__CAR_I__20C1E124">
+    <End Role="CARS" Type="Self.CAR" Multiplicity="0..1" />
+    <End Role="INSURANCE_INFO" Type="Self.INSURANCE_INFO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CARS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="INSURANCE_INFO">
+        <PropertyRef Name="CAR_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__INFO_COMP__COMPR__1FCDBCEB">
+    <End Role="COMPREHENSIVE_COVER" Type="Self.COMPREHENSIVE_COVER" Multiplicity="0..1" />
+    <End Role="INFO_COMPREHENSIVE_COVER" Type="Self.INFO_COMPREHENSIVE_COVER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COMPREHENSIVE_COVER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="INFO_COMPREHENSIVE_COVER">
+        <PropertyRef Name="COMPREHENSIVE_COVER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__INSURANCE__INSUR__21B6055D">
+    <End Role="INSURANCE" Type="Self.INSURANCE" Multiplicity="0..1" />
+    <End Role="INSURANCE_INFO" Type="Self.INSURANCE_INFO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="INSURANCE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="INSURANCE_INFO">
+        <PropertyRef Name="INSURANCE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__USERS__OWNERS_ID__36B12243">
+    <End Role="OWNERS" Type="Self.OWNER" Multiplicity="0..1" />
+    <End Role="USERS" Type="Self.USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OWNERS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="USERS">
+        <PropertyRef Name="OWNERS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AutoDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CARS" EntityType="Self.CAR" />
+    <EntitySet Name="COMPREHENSIVE_COVER" EntityType="Self.COMPREHENSIVE_COVER" />
+    <EntitySet Name="INFO_COMPREHENSIVE_COVER" EntityType="Self.INFO_COMPREHENSIVE_COVER" />
+    <EntitySet Name="INSURANCEs" EntityType="Self.INSURANCE" />
+    <EntitySet Name="INSURANCE_INFO" EntityType="Self.INSURANCE_INFO" />
+    <EntitySet Name="OWNERS" EntityType="Self.OWNER" />
+    <EntitySet Name="USERS" EntityType="Self.USER" />
+    <AssociationSet Name="FK__CARS__OWNER_ID__1DE57479" Association="Self.FK__CARS__OWNER_ID__1DE57479">
+      <End Role="OWNERS" EntitySet="OWNERS" />
+      <End Role="CARS" EntitySet="CARS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__INFO_COMP__CAR_I__1ED998B2" Association="Self.FK__INFO_COMP__CAR_I__1ED998B2">
+      <End Role="CARS" EntitySet="CARS" />
+      <End Role="INFO_COMPREHENSIVE_COVER" EntitySet="INFO_COMPREHENSIVE_COVER" />
+    </AssociationSet>
+    <AssociationSet Name="FK__INSURANCE__CAR_I__20C1E124" Association="Self.FK__INSURANCE__CAR_I__20C1E124">
+      <End Role="CARS" EntitySet="CARS" />
+      <End Role="INSURANCE_INFO" EntitySet="INSURANCE_INFO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__INFO_COMP__COMPR__1FCDBCEB" Association="Self.FK__INFO_COMP__COMPR__1FCDBCEB">
+      <End Role="COMPREHENSIVE_COVER" EntitySet="COMPREHENSIVE_COVER" />
+      <End Role="INFO_COMPREHENSIVE_COVER" EntitySet="INFO_COMPREHENSIVE_COVER" />
+    </AssociationSet>
+    <AssociationSet Name="FK__INSURANCE__INSUR__21B6055D" Association="Self.FK__INSURANCE__INSUR__21B6055D">
+      <End Role="INSURANCE" EntitySet="INSURANCEs" />
+      <End Role="INSURANCE_INFO" EntitySet="INSURANCE_INFO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__USERS__OWNERS_ID__36B12243" Association="Self.FK__USERS__OWNERS_ID__36B12243">
+      <End Role="OWNERS" EntitySet="OWNERS" />
+      <End Role="USERS" EntitySet="USERS" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

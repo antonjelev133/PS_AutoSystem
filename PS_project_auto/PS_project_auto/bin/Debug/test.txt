@@ -1,0 +1,1 @@
+car: BMW        registrationCA5555BA   model: M5         date: 2005-12-12           engine L: 5000Environment.NewLineOwner name  Anton Zhelev                  Owner adress Burgas,Meden rudnik                               Environment.NewLineInsurance date: 2017-06-12           period 1 price 420Environment.NewLine
